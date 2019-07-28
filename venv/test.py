@@ -1,2 +1,1 @@
-print("test")
-print("Heyyyyyyy")
+print("test2")
