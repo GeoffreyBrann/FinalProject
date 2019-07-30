@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddb68cc2-aa43-404e-b88d-a847793b6775" name="Default Changelist" comment="This is the final project file so we have somewhere to work ok" />
+    <list default="true" id="ddb68cc2-aa43-404e-b88d-a847793b6775" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.finalproject">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FinalProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,6 +85,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.finalproject" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -101,6 +102,7 @@
       <updated>1564355074091</updated>
       <workItem from="1564355093203" duration="688000" />
       <workItem from="1564442013676" duration="1395000" />
+      <workItem from="1564445105570" duration="347000" />
     </task>
     <task id="LOCAL-00001" summary="kyletest">
       <created>1564355596720</created>
@@ -123,7 +125,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564442627508</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="This is the final project file so we have somewhere to work ok">
+      <created>1564445178382</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1564445178382</updated>
+    </task>
+    <task id="LOCAL-00005" summary="This is the final project file so we have somewhere to work ok">
+      <created>1564445316342</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1564445316342</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +161,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="kyletest" />
     <MESSAGE value="This is the final project file so we have somewhere to work" />
-    <option name="LAST_COMMIT_MESSAGE" value="This is the final project file so we have somewhere to work" />
+    <MESSAGE value="This is the final project file so we have somewhere to work ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="This is the final project file so we have somewhere to work ok" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FinalProject$test.coverage" NAME="test Coverage Results" MODIFIED="1564355549159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
