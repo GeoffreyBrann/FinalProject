@@ -6,7 +6,7 @@ from .person_class import Person
 
 class Country:
     """class to create towns and hold citizens in each town """
-    def __init__(self, name: str, capacity: int, olimit: int, ilimit: int):
+    def __init__(self, name: str, capacity: int):
         self.uid = uuid4()  ###gives each country a unique id
         self.name = name  ##gives name, capacity, citizens, and limits on the created "roads"
         self.capacity = capacity

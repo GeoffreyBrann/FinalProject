@@ -24,12 +24,12 @@ if __name__ == "__main__":
             if criteria(people[i], people[j]):
                 people[i].add_friend(people[j], is_mutual=True)
 
-    country1 = Country("America", capacity=10, olimit=2, ilimit=2)  ###creates towns for sake of example
+    country1 = Country("America", capacity=10)  ###creates towns for sake of example
     country1.add_citizen(michelle)
     country1.add_citizen(james)
     country1.add_citizen(kyle)
     country1.add_citizen(jack)
-    country2 = Country("Canada", capacity=10, olimit=2, ilimit=2)
+    country2 = Country("Canada", capacity=10)
     country2.add_citizen(jennifer)
     country2.add_citizen(kim)
 
@@ -46,3 +46,5 @@ if __name__ == "__main__":
     michelle.add_friend(james, is_mutual=False)
 
     print(michelle.get_mutual_friends_as_string())
+
+    map.file()
