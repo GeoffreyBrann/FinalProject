@@ -49,3 +49,5 @@ class Person:
         with open("info.txt", "w") as myFile:
             myFile.write(self.name + ", " + self.country + ", " + str(len(self.mutual_friends)))
             myFile.write("\n")
+
+

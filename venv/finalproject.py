@@ -21,7 +21,7 @@ if __name__ == "__main__":
     for i in range(len(people)):   ###uses criteria to check people are mutual friends based off of name
         for j in range(len(people) - i - 1):
             j = j + i + 1
-            if (criteria(people[i], people[j])):
+            if criteria(people[i], people[j]):
                 people[i].add_friend(people[j], is_mutual=True)
 
     country1 = Country("America", capacity=10, olimit=2, ilimit=2)  ###creates towns for sake of example
