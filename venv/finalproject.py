@@ -10,12 +10,12 @@ def criteria(p1, p2):  ###defines person criteria
 
 
 if __name__ == "__main__":
-    michelle = Person("Michelle", "a")  ###creates a group of people
-    jack = Person("Jack", "a")
-    kyle = Person("Kyle", "a")
-    kim = Person("Kim", "a")
-    james = Person("James", "a")
-    jennifer = Person("Jennifer", "a")
+    michelle = Person("Michelle", "America")  ###creates a group of people
+    jack = Person("Jack", "America")
+    kyle = Person("Kyle", "America")
+    kim = Person("Kim", "Canada")
+    james = Person("James", "America")
+    jennifer = Person("Jennifer", "Canada")
 
     people = [michelle, jack]
 
