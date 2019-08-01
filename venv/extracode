@@ -1,0 +1,20 @@
+def move_person(self, person: Person, destination: Country):
+"""Function to move people from country to country"""
+countries = self.get_countries()  ###Gets a list of all the towns
+country_of_person = self.get_country_of_person(person, countries) ###retrieves country person is in
+country_of_person.remove_citizen(person) ###removes person from that country
+destination.add_citizen(person) ##adds person to desired country
+##Check the intersection of that country's citizens w the mutual friends of that person
+mf = person.get_mutual_friends()
+friends_to_alert = mf.intersection(destination.get_citizens())  ##once intersections are found create print statements to "alert" friends
+friends_to_unalert = mf.intersection(country_of_person.get_citizens())
+for fr in friends_to_alert:
+    self.alert_friend(f"Hey {fr.get_name()}, I'm coming to your town.")
+for fr in friends_to_unalert:
+    self.alert_friend(f"Sorry {fr.get_name()}, I have to go :(.")
+
+def alert_friend(self, msg: str):
+    print(msg) ###prints statements made in move_person
+
+def __contains__(self, person: Person) -> bool: ###returns true or false if person is in town or not
+    return person in self.citizens
