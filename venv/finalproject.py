@@ -72,17 +72,18 @@ class Town:
 
 class Person:
     """Class to create people, get their names, add friends, make a friendship mutual, and check and see if it is mutual"""
-    def __init__(self, name: str):
+    def __init__(self, name: str, country):
         self.uid = uuid4()  ###creates unique id, name, and a set for their friends and mutual friends
         self.name = name
         self.friends = set()
         self.mutual_friends = set()
+        self.country = country
 
     def __repr__(self):  ###code to represent the name of each person
         return f"Person<{self.name}>"
 
     def __str__(self):   ###represents each persons name and uuid
-        return f"Person<{self.name}, {self.uid}>"
+        return f"Person<{self.name}, {self.country}, {len(self.mutual_friends)}>"
 
     def get_name(self):  ###GETS NAME DUHHHHH
         return self.name
