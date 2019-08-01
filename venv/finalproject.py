@@ -111,13 +111,6 @@ class Person:
         '''Returns true if two people are mutual friends'''
         return self.uid in person.friends and person.uid in self.friends
 
-def get_town_info():  ###possible function to allow user to create towns, for sake of example did not use
-    #data = ""
-    #data += get_town_name()
-    #data += get_town_capacity()
-    pass
-
-
 def criteria(p1, p2):  ###defines person criteria
     return p1.name[0] == p2.name[0]
 
