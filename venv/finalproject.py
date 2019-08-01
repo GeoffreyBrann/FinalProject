@@ -9,19 +9,19 @@ def criteria(p1, p2):  ###defines person criteria
 
 
 if __name__ == "__main__":
-    michelle = Person("Michelle", "America")  ###creates a group of people
-    jack = Person("Jack", "America")
-    kyle = Person("Kyle", "America")
-    kim = Person("Kim", "Canada")
-    james = Person("James", "America")
-    jennifer = Person("Jennifer", "Canada")
+    michelle = Person("Michelle", "a")  ###creates a group of people
+    jack = Person("Jack", "a")
+    kyle = Person("Kyle", "a")
+    kim = Person("Kim", "a")
+    james = Person("James", "a")
+    jennifer = Person("Jennifer", "a")
 
     people = [michelle, jack]
 
     for i in range(len(people)):   ###uses criteria to check people are mutual friends based off of name
         for j in range(len(people) - i - 1):
             j = j + i + 1
-            if (criteria(people[i], people[j])):
+            if criteria(people[i], people[j]):
                 people[i].add_friend(people[j], is_mutual=True)
 
     country1 = Country("America", capacity=10)  ###creates towns for sake of example

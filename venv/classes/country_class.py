@@ -4,7 +4,6 @@ from uuid import uuid4
 
 from .person_class import Person
 
-
 class Country:
     """class to create towns and hold citizens in each town """
     def __init__(self, name: str, capacity: int):
@@ -26,3 +25,4 @@ class Country:
             self.citizens.remove(person)
             return
         raise KeyError
+
