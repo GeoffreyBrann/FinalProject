@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 from classes.country_class import Country
 from classes.map_class import Map
 from classes.person_class import Person

@@ -36,6 +36,7 @@ class Person:
         for friend in self.mutual_friends:
             content += f"{friend.name}\n"
         return content
+
     def get_mutual_friends(self):
         """Returns the set of mutual friends"""
         return self.mutual_friends
@@ -43,3 +44,8 @@ class Person:
     def is_mutual(self, person: "Person")-> bool:
         '''Returns true if two people are mutual friends'''
         return self.uid in person.friends and person.uid in self.friends
+
+    def file(self):
+        with open("info.txt", "w") as myFile:
+            myFile.write(self.name + ", " + self.country + ", " + str(len(self.mutual_friends)))
+            myFile.write("\n")
