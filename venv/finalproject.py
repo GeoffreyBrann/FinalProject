@@ -3,60 +3,33 @@ from typing import Dict, List, Set
 from uuid import uuid4
 
 class Map:
-    """class creating a map of connected towns to move people to and from"""
-    def __init__(self, map_as_dict: Dict[Town, List[Town]]):
-        self.towns: Dict[Town, List[Town]] = map_as_dict
+    """class creating a map of connected countries to move people to and from"""
+    def __init__(self, map_as_dict: Dict[Country, List[Country]]):
+        self.countries: Dict[Country, List[Country]] = map_as_dict
 
-    def get_towns(self) -> List[Town]:
-        """Returns a list of towns"""
-        towns = list(self.towns.keys())
-        return towns
+    def get_countries(self) -> List[Country]:
+        """Returns a list of countries"""
+        countries = list(self.countries.keys())
+        return countries
 
-    def get_town_of_person(self, person: Person, towns: List[Town]) -> Town:
+    def get_country_of_person(self, person: Person, countries: List[Country]) -> Country:
         """Finds the town the person is in"""
-        for town in towns:
-            if person in town:
-                return town
-
-    def move_person(self, person: Person, destination: Town):
-        """Function to move people from town to town"""
-        towns = self.get_towns()  ###Gets a list of all the towns
-        town_of_person = self.get_town_of_person(person, towns) ###retrieves town person is in
-        town_of_person.remove_citizen(person) ###removes person from that town
-        destination.add_citizen(person) ##adds person to desired town
-        ##Check the intersection of that town's citizens w the mutual friends of that person
-        mf = person.get_mutual_friends()
-        friends_to_alert = mf.intersection(destination.get_citizens())  ##once intersections are found create print statements to "alert" friends
-        friends_to_unalert = mf.intersection(town_of_person.get_citizens())
-        for fr in friends_to_alert:
-            self.alert_friend(f"Hey {fr.get_name()}, I'm coming to your town.")
-        for fr in friends_to_unalert:
-            self.alert_friend(f"Sorry {fr.get_name()}, I have to go :(.")
-
-    def alert_friend(self, msg: str):
-        print(msg) ###prints statements made in move_person
+        for country in countries:
+            if person in country:
+                return country
 
 
 
-class Town:
+class Country:
     """class to create towns and hold citizens in each town """
     def __init__(self, name: str, capacity: int, olimit: int, ilimit: int):
-        self.uid = uuid4()  ###gives each town a unique id
+        self.uid = uuid4()  ###gives each country a unique id
         self.name = name  ##gives name, capacity, citizens, and limits on the created "roads"
         self.capacity = capacity
         self.citizens = set()
-        self.outgoing_roads = set()
-        self.incoming_roads = set()
-        self.outgoing_limit = olimit
-        self.incoming_limit = ilimit
 
-    def __contains__(self, person: Person) -> bool: ###returns true or false if person is in town or not
-        return person in self.citizens
-
-    def get_citizens(self) -> Set[Person]:  ###gets the set of people in a town
-
+    def get_citizens(self) -> Set[Person]:  ###gets the set of people in a country
         return self.citizens
-
 
     def add_citizen(self, person: Person):
         """Adds person to the town"""
@@ -132,19 +105,19 @@ if __name__ == "__main__":
             if (criteria(people[i], people[j])):
                 people[i].add_friend(people[j], is_mutual=True)
 
-    town1 = Town("Ithaca", capacity=10, olimit=2, ilimit=2)  ###creates towns for sake of example
-    town1.add_citizen(michelle)
-    town1.add_citizen(james)
-    town1.add_citizen(kyle)
-    town1.add_citizen(jack)
-    town2 = Town("New York City", capacity=10, olimit=2, ilimit=2)
-    town2.add_citizen(jennifer)
-    town2.add_citizen(kim)
+    country1 = Country("America", capacity=10, olimit=2, ilimit=2)  ###creates towns for sake of example
+    country1.add_citizen(michelle)
+    country1.add_citizen(james)
+    country1.add_citizen(kyle)
+    country1.add_citizen(jack)
+    country2 = Country("Canada", capacity=10, olimit=2, ilimit=2)
+    country2.add_citizen(jennifer)
+    country2.add_citizen(kim)
 
 
     map = Map({
-        town1: [town2],  ###creates map of the made towns
-        town2: [town1]
+        country1: [country2],  ###creates map of the made countries
+        country2: [country1]
     })
 
     michelle.add_friend(jack, is_mutual=True)  ##calls functions for people to make friends and determine if mutual
@@ -153,5 +126,4 @@ if __name__ == "__main__":
     michelle.add_friend(kim, is_mutual=False)
     michelle.add_friend(james, is_mutual=False)
 
-    map.move_person(michelle, town2)  ##moves person from town to town
     print(michelle.get_mutual_friends_as_string())
