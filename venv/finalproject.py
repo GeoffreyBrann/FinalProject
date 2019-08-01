@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Dict, List, Set
 from uuid import uuid4
 
+
 class Map:
     """class creating a map of connected towns to move people to and from"""
     def __init__(self, map_as_dict: Dict[Town, List[Town]]):
