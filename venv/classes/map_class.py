@@ -20,3 +20,9 @@ class Map:
         for country in countries:
             if person in country:
                 return country
+
+    def file(self):
+        with open("info.txt", "w") as myFile:
+            for country in self.countries.keys():
+                for person in country.citizens:
+                    myFile.write(person.name + ", " + person.country + ", " + str(len(person.mutual_friends)) + "\n")
