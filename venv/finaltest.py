@@ -8,11 +8,11 @@ def criteria(p1, p2):  ###defines person criteria
     return p1.name[0] == p2.name[0]
 
 
-def start_game(map: Map):
+def start_game(our_map: Map):
     print("Welcome to our game: you get to infect people and have those people infect their friends\n" +
           "but its all through social media and yea it will be lots of fun. You get to choose a person to infect first"
           + "and you make all their friends infected and so on")
-    map.infect_first_person()
+    our_map.infect_first_person()
 
 
 if __name__ == "__main__":
