@@ -52,6 +52,4 @@ if __name__ == "__main__":
     michelle.add_friend(kim, is_mutual=False)
     michelle.add_friend(james, is_mutual=False)
 
-    print(michelle.get_mutual_friends_as_string())
-
-    map.file()
+    start_game(map)
