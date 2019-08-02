@@ -3,5 +3,5 @@ def show_results():
     turns = int(number_of_turns)
     number_people_infected = int(len(infected_people))
     total_people = int(len(all_people))
-    print("You took " + turns)
-    print("You infected " + number_people_infected + " out of " + total_people)
+    print("You took " + str(turns))
+    print("You infected " + str(number_people_infected) + " out of " + str(total_people))
