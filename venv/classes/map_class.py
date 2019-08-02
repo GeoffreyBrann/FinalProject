@@ -37,3 +37,7 @@ class Map:
                 p.infected = True
                 self.infected_people.add(p)
 
+    def print_people(self):
+        for i in self.get_countries():
+            for j in i.citizens:
+                print(j)
