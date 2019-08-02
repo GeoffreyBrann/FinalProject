@@ -39,7 +39,7 @@ class Map:
     def infect_mutual_friends(self, person):
         temp = []
         for p in person.mutual_friends:
-            if not p.is_infected:
+            if not p.is_infected():
                 p.infected = True
                 temp.append(p)
         for i in temp:
