@@ -37,10 +37,13 @@ class Map:
         first_person.infected = True
 
     def infect_mutual_friends(self, person):
+        temp = []
         for p in person.mutual_friends:
             if not p.is_infected:
                 p.infected = True
-                self.infected_people.add(p)
+                temp.append(p)
+        for i in temp:
+            self.infected_people.add(i)
 
     def print_people(self):
         for i in self.get_countries():
