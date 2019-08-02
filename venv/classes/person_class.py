@@ -10,6 +10,7 @@ class Person:
         self.friends = set()
         self.mutual_friends = set()
         self.country = country
+        self.infected = False
 
     def __repr__(self):  ###code to represent the name of each person
         return f"Person<{self.name}>"
@@ -45,3 +46,6 @@ class Person:
         '''Returns true if two people are mutual friends'''
         return self.uid in person.friends and person.uid in self.friends
 
+    def is_infected(self)-> bool:
+        '''Returns true if a person is infected'''
+        return True
