@@ -238,7 +238,7 @@
       <workItem from="1564768652176" duration="31000" />
       <workItem from="1564769440836" duration="257000" />
       <workItem from="1564776031519" duration="23000" />
-      <workItem from="1564776114372" duration="1464000" />
+      <workItem from="1564776114372" duration="1717000" />
     </task>
     <task id="LOCAL-00001" summary="kyletest">
       <created>1564355596720</created>
@@ -307,11 +307,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4150000" />
+    <option name="totallyTimeSpent" value="4403000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1293" height="733" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21099435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
