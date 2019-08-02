@@ -41,3 +41,9 @@ class Map:
         for i in self.get_countries():
             for j in i.citizens:
                 print(j)
+
+    def find_person_by_name(self, name: str):
+        for i in self.get_countries():
+            for j in i.citizens:
+                if j.get_name == name:
+                    return j
