@@ -45,7 +45,3 @@ class Person:
         '''Returns true if two people are mutual friends'''
         return self.uid in person.friends and person.uid in self.friends
 
-    def file(self):
-        with open("info.txt", "w") as myFile:
-            myFile.write(self.name + ", " + self.country + ", " + str(len(self.mutual_friends)))
-            myFile.write("\n")
