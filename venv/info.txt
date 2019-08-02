@@ -1,0 +1,6 @@
+Kyle, a, 1
+Michelle, a, 3
+Jack, a, 1
+James, a, 0
+Jennifer, a, 1
+Kim, a, 0
