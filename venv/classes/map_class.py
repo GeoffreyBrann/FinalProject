@@ -6,6 +6,8 @@ from .person_class import Person
 
 
 class Map:
+    first_person = None
+
     """class creating a map of connected countries to move people to and from"""
     def __init__(self, map_as_dict: Dict[Country, List[Country]]):
         self.countries: Dict[Country, List[Country]] = map_as_dict
@@ -28,8 +30,11 @@ class Map:
                 for person in country.citizens:
                     myFile.write(person.name + ", " + person.country + ", " + str(len(person.mutual_friends)) + "\n")
 
-    def infect_first_person(self, person: "Person"):
-        pass
+    def infect_first_person(self):
+        self.print_people()
+        i = input("Please enter the name of the person you would like to infect: ")
+        first_person = self.find_person_by_name(i)
+        first_person.infected = True
 
     def infect_mutual_friends(self, person):
         for p in person.mutual_friends:
