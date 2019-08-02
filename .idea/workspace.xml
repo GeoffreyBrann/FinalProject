@@ -235,7 +235,7 @@
       <workItem from="1564768652176" duration="31000" />
       <workItem from="1564769440836" duration="257000" />
       <workItem from="1564776031519" duration="23000" />
-      <workItem from="1564776114372" duration="257000" />
+      <workItem from="1564776114372" duration="624000" />
     </task>
     <task id="LOCAL-00001" summary="kyletest">
       <created>1564355596720</created>
@@ -304,7 +304,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2943000" />
+    <option name="totallyTimeSpent" value="3310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1293" height="733" extended-state="6" />
@@ -396,15 +396,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/finalproject.py" />
     <entry file="file://$PROJECT_DIR$/finaltest.py" />
-    <entry file="file://$PROJECT_DIR$/venv/classes/map_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/finaltest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -419,6 +410,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/classes/map_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
