@@ -9,6 +9,7 @@ class Map:
     """class creating a map of connected countries to move people to and from"""
     def __init__(self, map_as_dict: Dict[Country, List[Country]]):
         self.countries: Dict[Country, List[Country]] = map_as_dict
+        self.infected_people = set()
 
     def get_countries(self) -> List[Country]:
         """Returns a list of countries"""
@@ -26,3 +27,13 @@ class Map:
             for country in self.countries.keys():
                 for person in country.citizens:
                     myFile.write(person.name + ", " + person.country + ", " + str(len(person.mutual_friends)) + "\n")
+
+    def infect_first_person(self, person: "Person"):
+        pass
+
+    def infect_mutual_friends(self, person):
+        for p in person.mutual_friends:
+            if not p.is_infected:
+                p.infected = True
+                self.infected_people.add(p)
+

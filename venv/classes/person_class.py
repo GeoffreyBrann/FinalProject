@@ -48,4 +48,7 @@ class Person:
 
     def is_infected(self)-> bool:
         '''Returns true if a person is infected'''
-        return self.is_infected()
+        return self.infected
+
+
+
