@@ -41,8 +41,11 @@ class Map:
         temp = []
         for p in person.mutual_friends:
             if not p.is_infected():
-                p.infected = True
-                temp.append(p)
+                if self.can_be_infected("passive"):
+                    p.infected = True
+                    temp.append(p)
+                else:
+                    print(str(p.__repr__()) + " cannot be infected this way.")
         for i in temp:
             self.infected_people.append(i)
 
@@ -50,8 +53,12 @@ class Map:
         self.print_not_infected_people()
         i = input("Enter the name of the person you want to infect:: ")
         person = self.find_person_by_name(i)
-        person.infected = True
-        self.infected_people.append(person)
+        if person.can_be_infected("active"):
+            person.infected = True
+            self.infected_people.append(person)
+        else:
+            print(str(person.__repr__()) + " cannot be infected this way.")
+
 
     def print_people(self):
         for i in self.get_countries():
