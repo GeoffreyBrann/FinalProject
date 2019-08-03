@@ -41,7 +41,7 @@ class Map:
         temp = []
         for p in person.mutual_friends:
             if not p.is_infected():
-                if self.can_be_infected("passive"):
+                if p.can_be_infected("passive"):
                     p.infected = True
                     temp.append(p)
                 else:
