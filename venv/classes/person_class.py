@@ -16,7 +16,7 @@ class Person:
         return f"Person<{self.name}>"
 
     def __str__(self):   ###represents each persons name and uuid
-        return f"Person<{self.name}, {self.country}, {len(self.mutual_friends)}>"
+        return f"{self.name}, {self.country}, {len(self.mutual_friends)} friend(s)"
 
     def get_name(self):  ###GETS NAME DUHHHHH
         return self.name
