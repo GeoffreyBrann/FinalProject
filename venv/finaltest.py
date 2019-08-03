@@ -16,6 +16,7 @@ def start_game(our_map: Map):
 
 
 def mid_game(our_map):
+    '''infects mutual friends of people and counts the number of turns taken'''
     number_of_turns = 1
     old = 0
     now = len(our_map.infect_mutual_friends())
@@ -75,3 +76,4 @@ if __name__ == "__main__":
     michelle.add_friend(james, is_mutual=False)
 
     start_game(map)
+    mid_game(map)
