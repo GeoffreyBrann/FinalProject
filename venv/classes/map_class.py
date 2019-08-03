@@ -53,5 +53,5 @@ class Map:
     def find_person_by_name(self, name: str):
         for i in self.get_countries():
             for j in i.citizens:
-                if j.get_name.lower() == name.lower() or j.get_name.upper() == name.upper():
+                if j.get_name().lower() == name.lower() or j.get_name().upper() == name.upper():
                     return j
