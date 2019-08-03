@@ -14,7 +14,7 @@ def start_game(our_map: Map):
           + "and you make all their friends infected and so on")
     our_map.infect_first_person()
 
-def midGame(map):
+def mid_game(map):
     number_of_turns = 1
     old = 0
     now = len(map.infect_mutual_friends())
