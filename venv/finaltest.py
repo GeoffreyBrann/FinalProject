@@ -17,6 +17,7 @@ def start_game(our_map: Map):
 
 def mid_game(our_map: Map):
     '''infects mutual friends of people and counts the number of turns taken'''
+    active_infects_remaining = 5
     number_of_turns = 0
     old = 0
     now = len(our_map.infected_people)
@@ -26,9 +27,19 @@ def mid_game(our_map: Map):
         old = now
         now = len(our_map.infected_people)
         number_of_turns += 1
-        for person in our_map.infected_people:
-            our_map.infect_mutual_friends(person)
-        input("Press enter to take a turn: ")
+        choice = input("Enter \"active\" to target a certain person to infect. Enter \"passive\" to passively infect "
+                       "mutual friends. You have " + str(active_infects_remaining) + " active infects remaining.")
+        if choice == "active" and active_infects_remaining > 0:
+            our_map.active_infect()
+            active_infects_remaining -= 1
+        if choice == "active" and active_infects_remaining == 0:
+            print("You cannot actively infect any more people. Passively infecting::")
+            for person in our_map.infected_people:
+                our_map.infect_mutual_friends(person)
+        if choice == "passive":
+            for person in our_map.infected_people:
+                our_map.infect_mutual_friends(person)
+        input("Press enter to end your turn: ")
 
     '''Display number of turns player took and how many people they infected'''
     turns = int(number_of_turns)  ###number_of_turns is made up
