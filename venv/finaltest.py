@@ -37,7 +37,7 @@ def mid_game(our_map: Map):
     for z in our_map.countries:
         total_people += len(z.citizens)
 
-    print("You took " + str(turns) + " turn(s).")
+    print("You took " + str(turns) + " turn(s). On your last turn you did not infect anyone new.")
     print("You infected " + str(number_people_infected) + " out of " + str(total_people) + " people.")
 
 
