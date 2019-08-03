@@ -14,6 +14,20 @@ def start_game(our_map: Map):
           + "and you make all their friends infected and so on")
     our_map.infect_first_person()
 
+def midGame(map):
+    number_of_turns = 1
+    old = 0
+    now = len(map.infect_mutual_friends())
+    map.infect_mutual_friends(map.infected_people[0])
+    print("Press enter to take a turn: ")
+    while not old == now and input() == "\n":
+        old = now
+        now = len(map.infected_people)
+        number_of_turns += 1
+        for person in map.infected_people:
+            map.infect_mutual_friends(person)
+        print("Press enter to take a turn: ")
+
 
 if __name__ == "__main__":
     michelle = Person("Michelle", "a")  ###creates a group of people
