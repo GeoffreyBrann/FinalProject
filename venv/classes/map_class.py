@@ -51,6 +51,12 @@ class Map:
             for j in i.citizens:
                 print(j)
 
+    def print_not_infected_people(self):
+        for i in self.get_countries():
+            for j in i.citizens:
+                if j not in self.infected_people:
+                    print(j)
+
     def find_person_by_name(self, name: str):
         for i in self.get_countries():
             for j in i.citizens:
