@@ -4,7 +4,7 @@ from uuid import uuid4
 
 class Person:
     """Class to create people, get their names, add friends, make a friendship mutual, and check and see if it is mutual"""
-    def __init__(self, name: str, country, internet_time: bool, PE: bool, eat: bool, sleep: bool, cure: bool):
+    def __init__(self, name: str, country, internet_time: bool, PE: bool, eat: bool, sleep: bool, cured: bool):
         self.uid = uuid4()  ###creates unique id, name, and a set for their friends and mutual friends
         self.name = name
         self.friends = set()
@@ -15,7 +15,7 @@ class Person:
         self.PE = PE
         self.eat = eat
         self.sleep = sleep
-        self.cure = cure
+        self.cured = cured
 
     def __repr__(self):  ###code to represent the name of each person
         return f"Person<{self.name}>"
@@ -54,6 +54,29 @@ class Person:
     def is_infected(self)-> bool:
         '''Returns true if a person is infected'''
         return self.infected
+
+    def can_be_infected(self, type_of_infection):
+        if type_of_infection == "active":
+            counter = 2
+        elif type_of_infection == "passive":
+            counter = 0
+
+        if self.cured:
+            return False
+        else:
+            if self.internet_time:
+                counter += 1
+            if self.PE:
+                counter += 1
+            if self.eat:
+                counter += 1
+            if self.sleep:
+                counter += 1
+
+        if counter >= 3:
+            return True
+
+
 
 
 
