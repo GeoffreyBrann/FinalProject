@@ -21,14 +21,14 @@ def mid_game(our_map: Map):
     old = 0
     now = len(our_map.infected_people)
     our_map.infect_mutual_friends(our_map.infected_people[0])
-    input("Press enter to take a turn: ")
-    while old != now:
+    print("Press enter to take a turn: ")
+    while not old == now:
         old = now
         now = len(our_map.infected_people)
         number_of_turns += 1
         for person in our_map.infected_people:
             our_map.infect_mutual_friends(person)
-        input("Press enter to take a turn: ")
+        print("Press enter to take a turn: ")
 
     '''Display number of turns player took and how many people they infected'''
     turns = int(number_of_turns)  ###number_of_turns is made up
