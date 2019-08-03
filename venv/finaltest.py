@@ -38,7 +38,7 @@ def mid_game(our_map: Map):
         total_people += len(i.citizens)
 
     print("You took " + str(turns) + " turn(s).")
-    print("You infected " + str(number_people_infected) + " out of " + str(total_people))
+    print("You infected " + str(number_people_infected) + " out of " + str(total_people) + " people.")
 
 
 if __name__ == "__main__":
