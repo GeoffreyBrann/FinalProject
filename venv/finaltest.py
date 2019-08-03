@@ -15,7 +15,7 @@ def start_game(our_map: Map):
     our_map.infect_first_person()
 
 
-def mid_game(our_map):
+def mid_game(our_map: Map):
     number_of_turns = 1
     old = 0
     now = len(our_map.infect_mutual_friends())
@@ -32,7 +32,10 @@ def mid_game(our_map):
     '''Display number of turns player took and how many people they infected'''
     turns = int(number_of_turns)  ###number_of_turns is made up
     number_people_infected = int(len(our_map.infected_people))  ###infected_people made up right now
-    total_people = int(len(all_people))  ####all_people made up for now
+    total_people = 0    ####all_people made up for now
+    for i in our_map.countries:
+        total_people += len(i.citizens)
+
     print("You took " + str(turns))
     print("You infected " + str(number_people_infected) + " out of " + str(total_people))
 
