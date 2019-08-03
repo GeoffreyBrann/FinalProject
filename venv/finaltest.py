@@ -53,7 +53,7 @@ def mid_game(our_map: Map):
 
 
 if __name__ == "__main__":
-    michelle = Person("Michelle", "America")  ###creates a group of people
+    michelle = Person("Michelle", "America", True, False, False, True, True)  ###creates a group of people
     jack = Person("Jack", "America", True, False, True, True, False)
     kyle = Person("Kyle", "America", True, True, False, False, False)
     kim = Person("Kim", "Canada", False, True, False, False, False)
