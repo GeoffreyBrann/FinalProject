@@ -4,13 +4,18 @@ from uuid import uuid4
 
 class Person:
     """Class to create people, get their names, add friends, make a friendship mutual, and check and see if it is mutual"""
-    def __init__(self, name: str, country):
+    def __init__(self, name: str, country, internet_time: bool, PE: bool, eat: bool, sleep: bool, cure: bool):
         self.uid = uuid4()  ###creates unique id, name, and a set for their friends and mutual friends
         self.name = name
         self.friends = set()
         self.mutual_friends = set()
         self.country = country   ###country person is in
         self.infected = False   ###boolean if the person is infected or not
+        self.internet_time = internet_time
+        self.PE = PE
+        self.eat = eat
+        self.sleep = sleep
+        self.cure = cure
 
     def __repr__(self):  ###code to represent the name of each person
         return f"Person<{self.name}>"
