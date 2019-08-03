@@ -46,6 +46,13 @@ class Map:
         for i in temp:
             self.infected_people.append(i)
 
+    def active_infect(self):
+        self.print_not_infected_people()
+        i = input("Enter the name of the person you want to infect")
+        person = self.find_person_by_name(i)
+        person.infected = True
+        self.infected_people.append(person)
+
     def print_people(self):
         for i in self.get_countries():
             for j in i.citizens:
