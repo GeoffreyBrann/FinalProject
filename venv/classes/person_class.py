@@ -9,8 +9,8 @@ class Person:
         self.name = name
         self.friends = set()
         self.mutual_friends = set()
-        self.country = country
-        self.infected = False
+        self.country = country   ###country person is in
+        self.infected = False   ###boolean if the person is infected or not
 
     def __repr__(self):  ###code to represent the name of each person
         return f"Person<{self.name}>"
