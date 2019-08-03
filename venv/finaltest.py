@@ -28,7 +28,7 @@ def mid_game(our_map: Map):
         now = len(our_map.infected_people)
         number_of_turns += 1
         choice = input("Enter \"active\" to target a certain person to infect. Enter \"passive\" to passively infect "
-                       "mutual friends. You have " + str(active_infects_remaining) + " active infects remaining.")
+                       "mutual friends. You have " + str(active_infects_remaining) + " active infects remaining:: ")
         if choice == "active" and active_infects_remaining > 0:
             our_map.active_infect()
             active_infects_remaining -= 1
