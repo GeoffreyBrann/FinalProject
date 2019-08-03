@@ -11,7 +11,7 @@ class Map:
     """class creating a map of connected countries to move people to and from"""
     def __init__(self, map_as_dict: Dict[Country, List[Country]]):
         self.countries: Dict[Country, List[Country]] = map_as_dict
-        self.infected_people = set()
+        self.infected_people = []
 
     def get_countries(self) -> List[Country]:
         """Returns a list of countries"""
@@ -35,6 +35,7 @@ class Map:
         i = input("Please enter the name of the person you would like to infect: ")
         first_person = self.find_person_by_name(i)
         first_person.infected = True
+        self.infected_people.append(first_person)
 
     def infect_mutual_friends(self, person):
         temp = []
@@ -43,7 +44,7 @@ class Map:
                 p.infected = True
                 temp.append(p)
         for i in temp:
-            self.infected_people.add(i)
+            self.infected_people.append(i)
 
     def print_people(self):
         for i in self.get_countries():
