@@ -19,7 +19,7 @@ class Map:
         return countries
 
     def get_country_of_person(self, person: Person, countries: List[Country]) -> Country:
-        """Finds the town the person is in"""
+        """Finds the country the person is in"""
         for country in countries:
             if person in country:
                 return country

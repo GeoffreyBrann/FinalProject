@@ -5,7 +5,7 @@ from uuid import uuid4
 from .person_class import Person
 
 class Country:
-    """class to create towns and hold citizens in each town """
+    """class to create countries and hold citizens in each country """
     def __init__(self, name: str, capacity: int):
         self.uid = uuid4()  ###gives each country a unique id
         self.name = name  ##gives name, capacity, citizens, and limits on the created "roads"
@@ -16,11 +16,11 @@ class Country:
         return self.citizens
 
     def add_citizen(self, person: Person):
-        """Adds person to the town"""
+        """Adds person to the country"""
         self.citizens.add(person)
 
     def remove_citizen(self, person: Person):
-        """Removes person from town"""
+        """Removes person from country"""
         if person in self.citizens:
             self.citizens.remove(person)
             return
