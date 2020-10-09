@@ -1,0 +1,43 @@
+We created three classes: Person, Country, and Map.
+In the Person class, we created a person with a name, id, sets of friends and mutual friends, country, whether they are
+infected or not (initially set to false), and different attributes. There are attributes that is boolean which we will
+use to decide whether or not they can be infected. We also have a cured parameter on whether or not they have a cure.
+If it is set to true, they can't be infected at all. We overrode repr and str to show how to print out a person object.
+We used code from our towns homework with add_friend, get_mutual_friends_as_string, get_mutual_friends, and is_mutual in
+case we might need it for an updated version of our game. We have an is_infected function just return True or False in
+the parameter if a person is infected or not. We added a function called can_be_infected to count how many attributes
+they meet to see if they can be infected based on what type of infection they get (active or passive). To be able to be
+actively infected they only need at least one attribute to match but for passive infection they need at least three so
+we made counter two if the parameter for this function equals active so we can easily say that if counter is greater than
+or equal to 0 the person is infected by returning True.
+
+In the Country class, we made a country with a name, id, and set of citizens, and a capacity in case we need it in a upgraded
+program. We used code from our towns homework with the functions get_citizens to return the set of citizens, add_citizen,
+and remove_citizen in case we want to use them later.
+
+In the Map class, we created a Map as a dictionary with the key as the country and the value as the countries the key
+is connected to. We also created an empty list of infected_people so add onto so we can print how many people are infected
+and the people that are not infected yet. We used two functions from our towns homework: get_countries and get_country_of_person.
+We added the function file to put all the parameters of a person that would be useful to the user in a text file so we can
+print it out easily but never ended up using it in our example run. We created a function that infected the very first person
+in the game (they can always be infected to allow the game to start). We used a function print_people that we created later
+in that class that prints out the person's name, country, and number of mutual friends for the user to choose which person
+they want to infect first. We set person.infected to True and add the person to the infected people list. Then we created
+a function to infect the person's mutual friends (passive infection). We went through the person's set of mutual friends
+and checks first if the person is already infected and if not checks if they met the conditions and then infects them and
+if not they print out that this person cannot be infected in this manner. Then we created a function for active infections
+which is infected on specific person at a time. We printed out the people not infected using a function we created later
+in the class called print_not_infected_people that goes through the countries and each citizen and if they are not in the
+list of infected people they are printed out. Then we ask the user which person they want to infect and we use the function
+find_person_by_name (that we create later in the class) by checking if the person name is in any set of citizens (we
+use the upper and lower functions to account for people typing in caps or all lower case). Then the rest of the logic is
+the same as for passive infections.
+
+Then outside of all of the class we created two functions start_game and mid_game. In start game we print out an introduction
+and run the function infect first person. Then in mid game we set the number of active infections and old and new to use
+in our while loop and number of turns. We use old and new in the while loop because if we don't infect anyone new in a turn
+the game is over. We ask the user to enter whether they want an active or passive (describing what is each). Then based on
+what they enter we check the active infects remaining and infect people. If they have no more active infects remaining,
+the game also ends. If the user chooses active infects, the number of active infects left decreases by one. For every turn,
+the number of turns increases by one. Then once the game is over, it prints out how many turns it took and how many people
+out of the total number of people that were infected.
